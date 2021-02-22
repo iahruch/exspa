@@ -4,7 +4,6 @@ import { select, Store } from '@ngrx/store'
 import { registerAction } from '../../store/actions/register.action'
 import { Observable } from 'rxjs'
 import {isSubmittingSelector, validationErrorsSelector} from '../../store/selectors'
-import {AuthService} from "../../services/auth.service";
 import {BackendErrorInterface} from "../../../shared/types/backendError.interface";
 
 @Component({

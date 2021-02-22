@@ -7,6 +7,7 @@ import {environment} from "../../../environments/environment";
 import {pluck} from 'rxjs/operators';
 
 import {AuthReponseInterface} from "../types/authReponse.interface";
+import {LoginRequestInterface} from "../types/loginRequest.interface";
 
 @Injectable()
 
@@ -21,5 +22,9 @@ export class AuthService {
       return this.http.post<AuthReponseInterface>(url, data).pipe(pluck('user'));
   }
 
-  //login(data: RegisterRequestInterface): Observable<CurrentUserInterface>  {}
+  login(data: LoginRequestInterface): Observable<CurrentUserInterface>  {
+    const url = environment.apiUrl + '/users/login';
+    return this.http.post<AuthReponseInterface>(url, data).pipe(pluck('user'));
+  }
+
 }
